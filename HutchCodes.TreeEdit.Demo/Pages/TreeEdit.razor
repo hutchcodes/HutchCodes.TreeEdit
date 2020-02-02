@@ -1,0 +1,33 @@
+﻿@page "/treeedit"
+@using HutchCodes.TreeEdit
+
+<HutchCodesTreeEdit Nodes="Nodes" />
+
+
+@code {
+
+    public List<ITreeItem> Nodes = new List<ITreeItem>
+    {
+        new SimpleTreeItem
+        {
+            Text = "Test 1",
+            Nodes = new List<ITreeItem>
+            {
+                new SimpleTreeItem {
+                    Text = "Test 1.1",
+                    Nodes = new List<ITreeItem> {new SimpleTreeItem { Text = "Test 1.1.1"} }
+                },
+                new SimpleTreeItem {Text = "Test 1.2"}
+            }
+        },
+        new SimpleTreeItem
+        {
+            Text = "Test 2",
+            Nodes = new List<ITreeItem>
+            {
+                new SimpleTreeItem {Text = "Test 2.1"},
+                new SimpleTreeItem {Text = "Test 2.2"}
+            }
+        }
+    };
+}
